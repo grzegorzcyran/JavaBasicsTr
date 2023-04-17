@@ -1,6 +1,8 @@
 package edu.sda.java.basics;
 
 public class Gender {
+    public static String className = "Gender";
+
     private String genderName;
 
     public String getGenderName() {
