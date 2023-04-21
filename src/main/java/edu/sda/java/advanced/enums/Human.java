@@ -1,5 +1,7 @@
 package edu.sda.java.advanced.enums;
 
+import java.time.LocalDate;
+
 /**
  * If we have class that does not allow modification
  * of it's fields - it's called IMMUTABLE
@@ -18,6 +20,10 @@ public class Human {
     private final String name;
     private final String surname;
     private final Gender gender;
+
+    private LocalDate dateOfBirth;
+
+    private int age;
 
     public Human() {
         /**
@@ -55,5 +61,18 @@ public class Human {
 
     public Gender getGender() {
         return gender;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+        calculateAge();
+    }
+
+    /**
+     * We use this method in Human class only, we do not need to expose it then
+     * It's enough to make it private
+     */
+    private void calculateAge(){
+        age = LocalDate.now().getYear() - dateOfBirth.getYear();
     }
 }
