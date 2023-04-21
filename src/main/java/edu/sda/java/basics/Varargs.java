@@ -4,6 +4,12 @@ import java.util.Random;
 
 public class Varargs {
 
+
+    class Pair{
+        int left;
+        String right;
+    }
+
     public static void main(String[] args) {
         varArgsOne(1);
         System.out.println("=============");
@@ -17,12 +23,26 @@ public class Varargs {
 
     }
 
+    int calculateSth(Pair ... pairs) {
+        int result = 0;
+        for (Pair pair : pairs) {
+            result += pair.left;
+            System.out.println(pair.right);
+        }
+        return result;
+    }
+
     /**
      * we can call method with no args or with many args
+     * ... means 0 or more
      */
     private static void varArgsOne(int ... params) {
         for (int i = 0; i < params.length; i++) {
             System.out.println("Param number " + i + " is: " + params[i]);
+        }
+
+        for (int param : params) {
+            System.out.println("Iterating over elements");
         }
     }
 
@@ -37,6 +57,22 @@ public class Varargs {
         for (int i = 0; i < classes.length; i++) {
             System.out.println(classes[i]);
         }
+    }
+
+    int sum(int a, int b) {
+        return a + b;
+    }
+
+    int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+    //...
+    int sum(int ... pars) {
+        int result = 0;
+        for (int par : pars) {
+            result += par;
+        }
+        return result;
     }
 
 }
