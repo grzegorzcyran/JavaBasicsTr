@@ -21,5 +21,20 @@ public class RegularExpressions {
         Matcher another = pattern.matcher(sampleString);
         System.out.println(another.find());
 
+        Pattern patternUpperCase = Pattern.compile("[A-Z]");
+        Matcher matcherUpperCase = patternUpperCase.matcher("abc");
+        System.out.println("Any uppercase? : " + matcherUpperCase.find());
+
+        Matcher matcherUpperCase2 = patternUpperCase.matcher("aDf");
+        System.out.println("Any uppercase? : " + matcherUpperCase2.find());
+
+
+        Pattern mixed = Pattern.compile("[A-Z][A-D]\\da");
+        Matcher mixedMatcher = mixed.matcher("CLazz");
+        System.out.println("Any mixed? : " + mixedMatcher.find());
+        mixedMatcher = mixed.matcher("Lazz");
+        System.out.println("Any mixed? : " + mixedMatcher.find());
+        mixedMatcher = mixed.matcher("Cabzz");
+        System.out.println("Any mixed? : " + mixedMatcher.find());
     }
 }
