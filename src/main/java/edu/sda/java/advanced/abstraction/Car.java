@@ -6,6 +6,8 @@ package edu.sda.java.advanced.abstraction;
  *
  * Abstract class is "general definition of some type"
  * i.e. Animal and then special classes:Bird, Fish
+ *
+ * Each class extends some other class or extends class Object if no other class is extended
  */
 public abstract class Car {
 
@@ -23,6 +25,7 @@ public abstract class Car {
     }
 
     public String getVin() {
+        System.out.println(this.hashCode());
         return vin;
     }
 

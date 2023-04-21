@@ -18,5 +18,13 @@ public class ElectricCar extends Car {
     @Override
     public void fillFuel() {
         System.out.println("Plugged to power supply");
+
+        /**
+         * When passing object to println (or other methods that accept String as parameter
+         * by default method toString() is called
+         */
+        System.out.println(this);
+        //Above and below we have same piece of code - toString is called by default
+        System.out.println(this.toString());
     }
 }

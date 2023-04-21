@@ -22,13 +22,14 @@ public class AbstractionDemo {
         Car car1 = new ElectricCar("UUUVVV");
         car1.noOfKms = 433; //this is possible as noOfKms is protected
         Car car2 = new GasolineCar("qwerty", 322, "Benzine");
-        Car car3 = new ElectricCar("ZZXXCC");
+        ElectricCar car3 = new ElectricCar("ZZXXCC");
         /**
          * Below we say to JVM "treat this car as ElectricCar so that
          * I can call setNoOfKms method on it
          * as without that car3 has methods of "Car" class available, but not those from "ElectricCar"
          */
-        ((ElectricCar) car3).setNoOfKms(666);
+//        ((ElectricCar) car3).setNoOfKms(666);
+         car3.setNoOfKms(666);
 
         Car[] cars = new Car[]{car1, car2, car3};
 
